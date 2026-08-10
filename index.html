@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umoh Ambrose Elijah — SOC Analyst in Training | Cybersecurity | Author</title>
+<meta name="description" content="Umoh Ambrose Elijah — SOC Analyst in training, cybersecurity practitioner, EDMS Officer at AIICO Insurance, author of Echoes of Wisdom, and founder of Cyberhayde.">
+<link rel="canonical" href="https://cyberhayde.github.io/portfolio/">
+<meta name="theme-color" content="#0c1220">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c1220'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%2352d1c8'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Umoh Ambrose Elijah — SOC Analyst in Training | Cybersecurity | Author">
+<meta property="og:description" content="Cybersecurity practitioner, EDMS Officer at AIICO Insurance, author of Echoes of Wisdom, and founder of Cyberhayde.">
+<meta property="og:url" content="https://cyberhayde.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Umoh Ambrose Elijah — SOC Analyst in Training | Cybersecurity | Author">
+<meta name="twitter:description" content="Cybersecurity practitioner, EDMS Officer at AIICO Insurance, author of Echoes of Wisdom, and founder of Cyberhayde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #0c1220;
+    --panel:     #121a2b;
+    --panel-2:   #17203400;
+    --line:      #263248;
+    --text:      #e9edf3;
+    --muted:     #8b96a8;
+    --muted-2:   #5d6880;
+    --amber:     #f2a65a;
+    --amber-dim: #7a5a35;
+    --cyan:      #52d1c8;
+    --cyan-dim:  #2f5652;
+    --danger:    #e2685a;
+    --radius:    14px;
+    --maxw:      1180px;
+    --display:   'Space Grotesk', sans-serif;
+    --body:      'Inter', sans-serif;
+    --mono:      'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:
+      radial-gradient(1100px 600px at 85% -10%, #142035 0%, transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, #10192c 0%, transparent 55%),
+      var(--bg);
+    background-size:100% 100%, 100% 100%, 100% 100%;
+    animation:bgshift 22s ease-in-out infinite alternate;
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @keyframes bgshift{
+    0%{background-position:85% -10%, -10% 20%, 0 0;}
+    100%{background-position:78% -4%, -4% 28%, 0 0;}
+  }
+
+  /* floating ambient orbs (hero signature motion) */
+  .orb{
+    position:absolute; border-radius:50%; filter:blur(2px); pointer-events:none; z-index:0;
+    opacity:0.5;
+  }
+  .orb-1{width:10px; height:10px; background:var(--cyan); top:18%; left:8%; animation:float1 9s ease-in-out infinite;}
+  .orb-2{width:6px; height:6px; background:var(--amber); top:62%; left:22%; animation:float2 11s ease-in-out infinite;}
+  .orb-3{width:8px; height:8px; background:var(--cyan); top:38%; left:46%; animation:float1 13s ease-in-out infinite reverse;}
+  @keyframes float1{0%,100%{transform:translate(0,0);} 50%{transform:translate(14px,-22px);}}
+  @keyframes float2{0%,100%{transform:translate(0,0);} 50%{transform:translate(-18px,16px);}}
+
+  /* hero load-in stagger */
+  .hero-copy > *{opacity:0; transform:translateY(14px); animation:heroIn .7s ease forwards;}
+  .hero-copy .eyebrow{animation-delay:.05s;}
+  .hero-copy h1{animation-delay:.15s;}
+  .hero-copy .role-line{animation-delay:.28s;}
+  .hero-copy p.lede{animation-delay:.4s;}
+  .hero-copy .hero-ctas{animation-delay:.52s;}
+  @keyframes heroIn{to{opacity:1; transform:translateY(0);}}
+
+  .role-rotator{
+    position:relative; display:inline-block;
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .role-rotator.swap{opacity:0; transform:translateY(6px);}
+
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ul{list-style:none;}
+
+  ::selection{background:var(--amber); color:#1a1305;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* -------------------- NAV -------------------- */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(12,18,32,0.78);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 28px;
+    height:68px; display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:var(--mono); font-size:14px; letter-spacing:0.02em; color:var(--text);
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--cyan);
+    box-shadow:0 0 0 4px rgba(82,209,200,0.15);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;} 50%{opacity:0.35;}
+  }
+  nav.links{display:flex; gap:2px;}
+  nav.links a{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.03em;
+    color:var(--muted); padding:8px 14px; border-radius:8px; position:relative;
+    transition:color .2s ease, background .2s ease;
+  }
+  nav.links a:hover{color:var(--text); background:rgba(255,255,255,0.04);}
+  nav.links a.active{color:var(--cyan);}
+  nav.links a.active::after{
+    content:''; position:absolute; left:14px; right:14px; bottom:2px; height:1px; background:var(--cyan);
+  }
+
+  .nav-toggle{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;
+  }
+  .nav-toggle span{width:22px; height:2px; background:var(--text); border-radius:2px; transition:transform .25s ease, opacity .25s ease;}
+  .mobile-menu{
+    display:none; position:fixed; top:68px; left:0; right:0; bottom:0; z-index:99;
+    background:rgba(9,13,22,0.98); backdrop-filter:blur(6px);
+    padding:20px 28px; flex-direction:column; gap:4px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{
+    font-family:var(--mono); font-size:15px; padding:16px 4px; border-bottom:1px solid var(--line); color:var(--muted);
+  }
+  .mobile-menu a.active{color:var(--cyan);}
+
+  /* -------------------- HERO -------------------- */
+  .hero{
+    padding:150px 0 90px;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; color:var(--cyan); letter-spacing:0.08em;
+    text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:'//'; color:var(--muted-2);}
+  h1.name{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(2.4rem, 5.2vw, 4rem);
+    line-height:1.05; letter-spacing:-0.01em;
+    margin-bottom:18px;
+  }
+  .role-line{
+    font-family:var(--mono); font-size:clamp(0.9rem, 1.4vw, 1.05rem);
+    color:var(--amber); margin-bottom:26px; letter-spacing:0.01em;
+  }
+  .role-line .sep{color:var(--muted-2); margin:0 8px;}
+  .hero p.lede{
+    color:var(--muted); font-size:1.05rem; max-width:52ch; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.02em;
+    padding:13px 22px; border-radius:10px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--cyan); color:#08201d; font-weight:600;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(82,209,200,0.22);}
+  .btn-ghost{border-color:var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--muted-2); background:rgba(255,255,255,0.03); transform:translateY(-2px);}
+
+  /* terminal console signature element */
+  .console{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    font-family:var(--mono); font-size:13px; overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .console-bar{
+    display:flex; align-items:center; gap:8px; padding:11px 14px; border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,0.02);
+  }
+  .console-bar span{width:10px; height:10px; border-radius:50%; background:#3a4560;}
+  .console-bar span:nth-child(1){background:#e2685a;}
+  .console-bar span:nth-child(2){background:#f2a65a;}
+  .console-bar span:nth-child(3){background:#52d1c8;}
+  .console-bar .path{margin-left:8px; color:var(--muted-2); font-size:11.5px;}
+  .console-body{padding:20px 20px 22px; color:var(--muted);}
+  .console-body .line{margin-bottom:9px; white-space:pre-wrap;}
+  .console-body .prompt{color:var(--cyan);}
+  .console-body .val{color:var(--text);}
+  .console-body .status{color:var(--amber);}
+  .caret{display:inline-block; width:7px; height:15px; background:var(--cyan); vertical-align:-2px; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* -------------------- SECTION SCAFFOLD -------------------- */
+  section{padding:100px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-head{margin-bottom:48px; max-width:64ch;}
+  .sec-head .eyebrow{margin-bottom:14px;}
+  .sec-head h2{
+    font-family:var(--display); font-weight:600; font-size:clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom:14px; letter-spacing:-0.01em;
+  }
+  .sec-head p{color:var(--muted); font-size:1rem;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* -------------------- ABOUT -------------------- */
+  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:start;}
+  .about-grid p{color:var(--muted); margin-bottom:18px; max-width:66ch;}
+  .about-grid p strong{color:var(--text); font-weight:600;}
+  .fact-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+  }
+  .fact-card .fact{display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .fact-card .fact:last-child{border-bottom:none;}
+  .fact-card .fact .k{color:var(--muted-2); font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;}
+  .fact-card .fact .v{color:var(--text); text-align:right;}
+
+  .book-card{
+    margin-top:20px; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; display:flex; gap:18px; align-items:center; transition:border-color .2s ease, transform .2s ease;
+  }
+  .book-card:hover{border-color:var(--muted-2); transform:translateY(-2px);}
+  .book-card img{width:64px; border-radius:4px; box-shadow:0 10px 20px -8px rgba(0,0,0,0.6); flex-shrink:0;}
+  .book-card h4{font-family:var(--display); font-size:1rem; margin:2px 0 4px; font-weight:600;}
+  .book-card p{color:var(--muted); font-size:12.5px;}
+  .book-info .venture-kicker{margin-bottom:4px;}
+
+  /* -------------------- SKILLS -------------------- */
+  .skill-cols{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;}
+  .skill-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px;
+  }
+  .skill-panel .tag{
+    display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--cyan); border:1px solid var(--cyan-dim); background:rgba(82,209,200,0.06);
+    padding:4px 9px; border-radius:6px; margin-bottom:16px;
+  }
+  .skill-panel.technical .tag{color:var(--amber); border-color:var(--amber-dim); background:rgba(242,166,90,0.07);}
+  .skill-panel.professional .tag{color:#c9a6f2; border-color:#5a4a7a; background:rgba(201,166,242,0.06);}
+  .skill-panel h3{font-family:var(--display); font-size:1.1rem; margin-bottom:16px; font-weight:600;}
+  .skill-panel li{
+    font-size:13.5px; color:var(--muted); padding:9px 0; border-bottom:1px dashed var(--line);
+    display:flex; gap:10px; align-items:baseline;
+  }
+  .skill-panel li:last-child{border-bottom:none;}
+  .skill-panel li::before{content:'▸'; color:var(--muted-2); flex-shrink:0; font-size:11px;}
+
+  /* -------------------- CERTS / HONORS -------------------- */
+  .logo-strip{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:32px;}
+  .logo-chip{
+    background:#fff; border-radius:10px; padding:12px 20px; display:flex; align-items:center; justify-content:center;
+    transition:transform .2s ease;
+  }
+  .logo-chip:hover{transform:translateY(-3px);}
+  .logo-chip img{height:26px; width:auto; object-fit:contain;}
+
+  .cred-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .cred-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+  .cred-card h3{font-family:var(--display); font-size:1.05rem; margin-bottom:18px; display:flex; align-items:center; gap:10px;}
+  .cred-card h3 .ico{color:var(--amber);}
+  .cred-card .item{
+    display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px; color:var(--muted);
+  }
+  .cred-card .item:last-child{border-bottom:none;}
+  .cred-card .item .chip{
+    flex-shrink:0; width:18px; height:18px; border-radius:5px; margin-top:2px;
+    background:rgba(82,209,200,0.12); color:var(--cyan); display:flex; align-items:center; justify-content:center;
+    font-size:10px; font-family:var(--mono);
+  }
+  .cred-card.honors .item .chip{background:rgba(242,166,90,0.14); color:var(--amber);}
+  .cred-card .item .v{color:var(--text);}
+
+  /* -------------------- COMMUNITY -------------------- */
+  .community-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .community-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .community-card:hover{transform:translateY(-4px); border-color:var(--muted-2);}
+  .community-card img{width:100%; height:200px; object-fit:cover; display:block; filter:saturate(0.92);}
+  .community-body{padding:24px;}
+  .community-body h3{font-family:var(--display); font-size:1.1rem; margin-bottom:10px; font-weight:600;}
+  .community-body p{color:var(--muted); font-size:13.5px; margin-bottom:16px;}
+  .impact-tag{
+    font-family:var(--mono); font-size:11px; color:var(--cyan); border:1px solid var(--cyan-dim);
+    background:rgba(82,209,200,0.06); display:inline-block; padding:6px 12px; border-radius:20px;
+  }
+
+  /* -------------------- VENTURES (new) -------------------- */
+  .venture-card{
+    background:linear-gradient(160deg, #131c30 0%, #101728 100%);
+    border:1px solid var(--line); border-radius:18px; padding:36px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:36px; align-items:center;
+    position:relative; overflow:hidden;
+  }
+  .venture-card::before{
+    content:''; position:absolute; top:-40%; right:-10%; width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(82,209,200,0.10), transparent 65%);
+  }
+  .venture-card + .venture-card{margin-top:22px;}
+  .venture-kicker{font-family:var(--mono); font-size:11.5px; color:var(--muted-2); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px;}
+  .venture-card h3{font-family:var(--display); font-size:1.6rem; margin-bottom:12px; font-weight:600;}
+  .venture-card p{color:var(--muted); font-size:14.5px; margin-bottom:18px; max-width:52ch;}
+  .venture-badges{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .venture-badges span{
+    font-family:var(--mono); font-size:11px; color:var(--text); background:rgba(255,255,255,0.05);
+    border:1px solid var(--line); padding:5px 10px; border-radius:20px;
+  }
+  .venture-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px;
+    font-family:var(--mono); font-size:12.5px; color:var(--muted); position:relative; z-index:1;
+  }
+  .venture-panel .row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--line);}
+  .venture-panel .row:last-child{border-bottom:none;}
+  .venture-panel .row .v{color:var(--cyan);}
+
+  /* -------------------- PROJECTS -------------------- */
+  .project-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;}
+  .project-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    display:flex; flex-direction:column; transition:border-color .2s ease, transform .2s ease;
+  }
+  .project-card:hover{border-color:var(--muted-2); transform:translateY(-3px);}
+  .project-thumb{
+    width:100%; height:150px; object-fit:cover; display:block; filter:saturate(0.9);
+    transition:transform .4s ease;
+  }
+  .project-thumb.logo-thumb{object-fit:contain; background:#fff; padding:26px 0;}
+  .project-card:hover .project-thumb{transform:scale(1.04);}
+  .project-card-body{padding:22px; display:flex; flex-direction:column; flex:1;}
+  .project-card h3{font-family:var(--display); font-size:1.05rem; margin-bottom:10px; font-weight:600;}
+  .project-card p{color:var(--muted); font-size:13px; flex:1; margin-bottom:16px;}
+  .project-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px;}
+  .project-tags span{
+    font-family:var(--mono); font-size:10px; color:var(--muted-2); border:1px solid var(--line);
+    padding:3px 8px; border-radius:6px;
+  }
+  .project-card a.code-link{
+    font-family:var(--mono); font-size:12px; color:var(--cyan); display:inline-flex; align-items:center; gap:7px;
+  }
+  .project-card a.code-link:hover{text-decoration:underline;}
+  .gh-icon{width:14px; height:14px; object-fit:contain; filter:invert(78%) sepia(28%) saturate(561%) hue-rotate(122deg) brightness(94%);}
+
+  /* -------------------- WRITING -------------------- */
+  .writing-list{display:flex; flex-direction:column;}
+  .writing-item{
+    display:grid; grid-template-columns:120px 1fr auto; gap:24px; align-items:start;
+    padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .writing-item:first-child{border-top:1px solid var(--line);}
+  .writing-item time{font-family:var(--mono); font-size:12px; color:var(--muted-2); padding-top:4px;}
+  .writing-item .meta{display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap;}
+  .writing-item .cat{
+    font-family:var(--mono); font-size:10.5px; color:var(--amber); text-transform:uppercase; letter-spacing:0.05em;
+  }
+  .writing-item .read{font-family:var(--mono); font-size:10.5px; color:var(--muted-2);}
+  .writing-item h3{font-family:var(--display); font-size:1.15rem; margin-bottom:8px; font-weight:600;}
+  .writing-item p{color:var(--muted); font-size:13.5px; max-width:60ch;}
+  .writing-item .go{
+    font-family:var(--mono); font-size:12.5px; color:var(--cyan); align-self:center; white-space:nowrap;
+  }
+  .view-all{margin-top:32px; text-align:center;}
+
+  /* -------------------- CONTACT -------------------- */
+  .contact-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:56px;
+    text-align:center; position:relative; overflow:hidden;
+  }
+  .contact-panel::before{
+    content:''; position:absolute; inset:0; background:radial-gradient(600px 260px at 50% 0%, rgba(82,209,200,0.08), transparent 70%);
+  }
+  .contact-panel h2{font-family:var(--display); font-size:clamp(1.6rem,3.4vw,2.4rem); margin-bottom:16px; position:relative;}
+  .contact-panel p{color:var(--muted); max-width:50ch; margin:0 auto 32px; position:relative;}
+  .contact-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; position:relative;}
+  .contact-details{
+    margin-top:28px; font-family:var(--mono); font-size:12.5px; color:var(--muted-2);
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap; position:relative;
+  }
+  .contact-details .dash{color:var(--line);}
+
+  footer{padding:36px 0 50px; text-align:center;}
+  footer p{font-family:var(--mono); font-size:11.5px; color:var(--muted-2);}
+
+  .to-top{
+    position:fixed; right:24px; bottom:24px; width:44px; height:44px; border-radius:12px;
+    background:var(--panel); border:1px solid var(--line); color:var(--text); display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .25s ease, transform .2s ease; z-index:90; cursor:pointer;
+  }
+  .to-top.show{opacity:1; pointer-events:auto;}
+  .to-top:hover{transform:translateY(-3px); border-color:var(--muted-2);}
+
+  /* -------------------- RESPONSIVE -------------------- */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr; padding-top:130px;}
+    .about-grid{grid-template-columns:1fr;}
+    .skill-cols{grid-template-columns:1fr 1fr;}
+    .cred-grid{grid-template-columns:1fr;}
+    .venture-card{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    nav.links{display:none;}
+    .nav-toggle{display:flex;}
+    .wrap{padding:0 20px;}
+    .hero{padding:118px 0 60px;}
+    section{padding:64px 0;}
+    .skill-cols{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .writing-item{grid-template-columns:1fr; gap:8px;}
+    .writing-item .go{justify-self:start;}
+    .contact-panel{padding:38px 22px;}
+    h1.name{font-size:2.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>cyberhayde.log</a>
+    <nav class="links" id="desktopLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#community">Community</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="https://cyberhayde.github.io/CyberHayde/" target="_blank" rel="noopener">CyberHayde ↗</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#community">Community</a>
+  <a href="#ventures">Ventures</a>
+  <a href="#projects">Projects</a>
+  <a href="#writing">Writing</a>
+  <a href="https://cyberhayde.github.io/CyberHayde/" target="_blank" rel="noopener">CyberHayde ↗</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap" style="border-top:none; position:relative;">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-copy" style="position:relative; z-index:1;">
+      <div class="eyebrow">status: monitoring</div>
+      <h1 class="name">Umoh Ambrose Elijah</h1>
+      <div class="role-line">
+        <span class="role-rotator" id="roleRotator">SOC Analyst in Training</span>
+      </div>
+      <p class="lede">I study attacker behavior so I can build better defenses — currently securing documents by day at AIICO Insurance, training for the SOC by night, and building tools under my own brand, Cyberhayde.</p>
+      <div class="hero-ctas">
+        <a href="#ventures" class="btn btn-primary">See Cyberhayde &amp; Smaxel →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="console reveal">
+      <div class="console-bar">
+        <span></span><span></span><span></span>
+        <span class="path">~/whoami.sh</span>
+      </div>
+      <div class="console-body">
+        <div class="line"><span class="prompt">$</span> whoami</div>
+        <div class="line"><span class="val">umoh_ambrose_elijah</span></div>
+        <div class="line"><span class="prompt">$</span> role</div>
+        <div class="line"><span class="val">EDMS Officer, AIICO Insurance PLC</span></div>
+        <div class="line"><span class="prompt">$</span> based_in</div>
+        <div class="line"><span class="val">Lagos, Nigeria</span></div>
+        <div class="line"><span class="prompt">$</span> studying</div>
+        <div class="line"><span class="val">B.Sc Computer Science — NOUN</span></div>
+        <div class="line"><span class="prompt">$</span> objective</div>
+        <div class="line"><span class="status">grow into a SOC Analyst<span class="caret"></span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">about</div>
+        <h2>Defense-minded, by training and by trade</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm a cybersecurity professional in training and Computer Science student at the <strong>National Open University of Nigeria (NOUN)</strong>, with a strong focus on security operations, threat detection, and defensive cybersecurity.</p>
+          <p>My path into cybersecurity is driven by analytical curiosity, problem-solving, and a passion for protecting digital environments through proactive monitoring, incident analysis, and network defense strategies. I've built hands-on experience through certifications, cybersecurity simulations, and practical labs covering threat analysis, network security, and defensive technologies.</p>
+          <p>Currently I serve as an <strong>EDMS Officer at AIICO Insurance PLC</strong>, where I support secure document management, access control, and information governance — work that reinforces my understanding of operational security and data protection in real-world environments.</p>
+          <p>Beyond the technical side, I'm the author of <strong>Echoes of Wisdom</strong>, a Global Peace Ambassador, and an advocate for using technology as a tool for empowerment, youth inspiration, and positive global impact.</p>
+          <p>My long-term goal is to grow into a highly skilled SOC Analyst, contributing to threat detection, incident response, and cyber defense at a global scale.</p>
+        </div>
+        <div class="reveal">
+        <div class="fact-card">
+          <div class="fact"><span class="k">Role</span><span class="v">EDMS Officer, AIICO Insurance PLC</span></div>
+          <div class="fact"><span class="k">Education</span><span class="v">B.Sc Computer Science, NOUN</span></div>
+          <div class="fact"><span class="k">Focus</span><span class="v">SOC / Threat Detection / Defense</span></div>
+          <div class="fact"><span class="k">Also building</span><span class="v">Cyberhayde &amp; Smaxel</span></div>
+          <div class="fact"><span class="k">Recognition</span><span class="v">Global Peace Ambassador</span></div>
+        </div>
+        <a class="book-card" href="https://selar.com/11111929if" target="_blank" rel="noopener">
+          <img src="assets/echoes-of-wisdom-cover.jpg" alt="Echoes of Wisdom book cover by Umoh Ambrose" width="64" height="96" loading="lazy">
+          <div class="book-info">
+            <div class="venture-kicker">Author</div>
+            <h4>Echoes of Wisdom</h4>
+            <p>A practical guide to living with clarity — get it on Selar →</p>
+          </div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">skills &amp; expertise</div>
+        <h2>A comprehensive skill set across security, systems, and people</h2>
+        <p>Combining cybersecurity fundamentals, technical depth, and continuous, self-directed learning.</p>
+      </div>
+      <div class="skill-cols">
+        <div class="skill-panel reveal">
+          <span class="tag">Core Cybersecurity</span>
+          <h3>Security Operations</h3>
+          <ul>
+            <li>Security Operations (SOC fundamentals)</li>
+            <li>Threat Detection &amp; Analysis</li>
+            <li>Incident Investigation</li>
+            <li>Network Security &amp; Monitoring</li>
+            <li>Vulnerability Awareness</li>
+            <li>Security Risk Management</li>
+          </ul>
+        </div>
+        <div class="skill-panel technical reveal">
+          <span class="tag">Technical</span>
+          <h3>Tools &amp; Systems</h3>
+          <ul>
+            <li>Networking Fundamentals (CCNA-level)</li>
+            <li>Linux &amp; Command Line</li>
+            <li>SIEM Concepts (Splunk / Log Analysis)</li>
+            <li>Microsoft Defender Security Concepts</li>
+            <li>Firewall Fundamentals (Fortinet)</li>
+            <li>Endpoint Security</li>
+          </ul>
+        </div>
+        <div class="skill-panel professional reveal">
+          <span class="tag">Professional</span>
+          <h3>How I Work</h3>
+          <ul>
+            <li>Analytical Thinking</li>
+            <li>Technical Troubleshooting</li>
+            <li>Teaching &amp; Knowledge Sharing</li>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Leadership &amp; Mentorship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS / HONORS -->
+  <section id="credentials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">credentials</div>
+        <h2>Certifications &amp; recognition</h2>
+      </div>
+      <div class="logo-strip reveal">
+        <div class="logo-chip"><img src="assets/fortinet-logo.png" alt="Fortinet"></div>
+        <div class="logo-chip"><img src="assets/cisco-logo.png" alt="Cisco"></div>
+        <div class="logo-chip"><img src="assets/ndpc-logo.png" alt="Nigeria Data Protection Commission"></div>
+      </div>
+      <div class="cred-grid">
+        <div class="cred-card reveal">
+          <h3><span class="ico">▣</span> Certifications</h3>
+          <div class="item"><span class="chip">✓</span><span class="v">Google Cybersecurity Professional Certificate</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Fortinet Certified Associate in Cybersecurity</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Fortinet FortiGate 7.4 Operator</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Certified Network Security Practitioner (CNSP)</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Cisco Cyber Threat Management Certification</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">CCNA 200-301 Training</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Nigeria Data Protection Commission — Responsible Data Management</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Commonwealth Bank Cybersecurity Job Simulation</span></div>
+          <div class="item"><span class="chip">✓</span><span class="v">Mastercard Cybersecurity Job Simulation</span></div>
+        </div>
+        <div class="cred-card honors reveal">
+          <h3><span class="ico">★</span> Honors &amp; Accomplishments</h3>
+          <div class="item"><span class="chip">★</span><span class="v">Directorate of Strategic Partnership — Lagos State Youth Ambassadors</span></div>
+          <div class="item"><span class="chip">★</span><span class="v">Author of Echoes of Wisdom</span></div>
+          <div class="item"><span class="chip">★</span><span class="v">Global Peace Ambassador</span></div>
+          <div class="item"><span class="chip">★</span><span class="v">IBILE Youth Academy Alumni</span></div>
+          <div class="item"><span class="chip">★</span><span class="v">Active contributor to cybersecurity awareness &amp; education</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY IMPACT -->
+  <section id="community">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">giving back</div>
+        <h2>Community impact &amp; volunteer work</h2>
+        <p>I'm passionate about giving back to the community and creating meaningful change, particularly for young people and underserved communities — through hands-on initiatives that make tangible, on-the-ground contributions.</p>
+      </div>
+      <div class="community-grid">
+        <div class="community-card reveal">
+          <img src="assets/community-notebooks.jpg" alt="Distributing stationery to children in an underserved community" loading="lazy">
+          <div class="community-body">
+            <div class="venture-kicker">Educational Support for Children</div>
+            <h3>Sharing Stationery to Children in Underserved Communities</h3>
+            <p>Partnered with a local youth initiative to distribute school supplies to children living in underserved areas — reducing barriers to education and supporting students who lacked access to basic learning materials.</p>
+            <div class="impact-tag">Over 100 children reached</div>
+          </div>
+        </div>
+        <div class="community-card reveal">
+          <img src="assets/community-sanitation-2.jpg" alt="Volunteers taking part in a street clean-up and sanitation drive" loading="lazy">
+          <div class="community-body">
+            <div class="venture-kicker">Community Sanitation Exercise</div>
+            <h3>Street Clean-Up &amp; Sanitation Drive</h3>
+            <p>Organized and took part in a sanitation exercise to clean public streets and promote hygiene awareness — improving local living conditions and engaging residents in sustainable sanitation practices.</p>
+            <div class="impact-tag">Cleaner, safer community space</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTURES (NEW) -->
+  <section id="ventures">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">building</div>
+        <h2>Ventures — Cyberhayde</h2>
+        <p>Outside my day-to-day work, I run Cyberhayde: an independent software brand helping individuals and small businesses digitize and automate the manual processes slowing them down.</p>
+      </div>
+
+      <div class="venture-card reveal">
+        <div>
+          <div class="venture-kicker">Flagship product</div>
+          <h3>Smaxel — Excel Automation Toolkit</h3>
+          <p>A 49-tool Windows desktop toolkit built for anyone who lives inside spreadsheets — admin staff, data officers, finance teams, auditors, and small business owners. It handles the cleaning, matching, reformatting, and hunting-through-files work in seconds instead of hours.</p>
+          <div class="venture-badges">
+            <span>49 tools</span>
+            <span>Python / Tkinter</span>
+            <span>Offline HMAC-SHA256 licensing</span>
+            <span>CLI support</span>
+          </div>
+          <a href="https://selar.com/smaxel" target="_blank" rel="noopener" class="btn btn-primary">Get Smaxel on Selar →</a>
+        </div>
+        <div class="venture-panel">
+          <div class="row"><span>build</span><span class="v">modular, 4-file architecture</span></div>
+          <div class="row"><span>licensing</span><span class="v">device-locked, offline</span></div>
+          <div class="row"><span>handles</span><span class="v">large files, multithreaded</span></div>
+          <div class="row"><span>extras</span><span class="v">auto-backup, dark mode</span></div>
+          <div class="row"><span>status</span><span class="v">live on Selar</span></div>
+        </div>
+      </div>
+
+      <div class="venture-card reveal">
+        <div>
+          <div class="venture-kicker">Release</div>
+          <h3>Church Online Archive</h3>
+          <p>A free, cloud-synced records app built for a growing congregation still tracking members, attendance, and visitors on paper and in scattered notebooks. The whole admin team runs it from their phones, members records, attendance trends, visitor and outreach tracking, all in one place.</p>
+          <div class="venture-badges">
+            <span>Cloud-synced</span>
+            <span>Records &amp; attendance</span>
+            <span>Free to use</span>
+          </div>
+          <a href="https://cyberhayde.github.io/Database-Demo/" target="_blank" rel="noopener" class="btn btn-primary">Try the live demo →</a>
+        </div>
+        <div class="venture-panel">
+          <div class="row"><span>build</span><span class="v">cloud-synced web app</span></div>
+          <div class="row"><span>tracks</span><span class="v">members, attendance, visitors</span></div>
+          <div class="row"><span>access</span><span class="v">phone-friendly, whole admin team</span></div>
+          <div class="row"><span>status</span><span class="v">live demo</span></div>
+        </div>
+      </div>
+
+      <div class="venture-card reveal">
+        <div>
+          <div class="venture-kicker">Latest release</div>
+          <h3>Inventory Tracker</h3>
+          <p>An offline-first inventory app built for shops running stock counts from memory or a notebook. Tracks stock and sales straight from the shop counter, and keeps working even without steady internet.</p>
+          <div class="venture-badges">
+            <span>Offline-first</span>
+            <span>Stock &amp; sales tracking</span>
+            <span>Nigeria-focused</span>
+          </div>
+          <a href="https://cyberhayde.github.io/Inventory-demo/" target="_blank" rel="noopener" class="btn btn-primary">Try the live demo →</a>
+        </div>
+        <div class="venture-panel">
+          <div class="row"><span>build</span><span class="v">offline-first PWA</span></div>
+          <div class="row"><span>tracks</span><span class="v">stock, sales, reorder levels</span></div>
+          <div class="row"><span>works</span><span class="v">without steady internet</span></div>
+          <div class="row"><span>status</span><span class="v">live demo</span></div>
+        </div>
+      </div>
+
+      <div class="venture-card reveal">
+        <div>
+          <div class="venture-kicker">The brand</div>
+          <h3>Cyberhayde</h3>
+          <p>Cyberhayde is the organization behind Smaxel and future releases — built around one idea: manual, repetitive processes (not just paper ones) are a solvable problem. Every product ships with the same security-first instinct I bring to my SOC training: lock it down, document it well, and make it easy for a non-technical person to trust.</p>
+          <div class="venture-badges">
+            <span>Independent software brand</span>
+            <span>Digitization &amp; automation</span>
+            <span>Security-minded engineering</span>
+          </div>
+        </div>
+        <div class="venture-panel">
+          <div class="row"><span>mission</span><span class="v">digitize &amp; automate</span></div>
+          <div class="row"><span>audience</span><span class="v">individuals &amp; small business</span></div>
+          <div class="row"><span>flagship</span><span class="v">Smaxel</span></div>
+          <div class="row"><span>next</span><span class="v">more Cyberhayde releases</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">projects</div>
+        <h2>Hands-on security &amp; systems work</h2>
+        <p>A comprehensive set of practical builds spanning cryptography, network analysis, and applied security concepts.</p>
+      </div>
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <img class="project-thumb" src="assets/proj-caesar-cipher.jpg" alt="Code editor representing the Caesar cipher project" loading="lazy">
+          <div class="project-card-body">
+          <h3>Caesar Cipher Encryption Tool</h3>
+          <p>A Python-based encryption and decryption tool built on the Caesar cipher algorithm, with an educational video walking through how it works.</p>
+          <div class="project-tags"><span>Python</span><span>Cryptography</span></div>
+          <a href="https://github.com/CyberHayde/PRODIGY_CS_01" target="_blank" rel="noopener" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img class="project-thumb" src="assets/proj-packet-sniffer.png" alt="CommView packet capture tool showing live network traffic" loading="lazy">
+          <div class="project-card-body">
+          <h3>Python Packet Sniffer</h3>
+          <p>A network packet analyzer that captures and inspects traffic in real time, paired with educational content on network security monitoring.</p>
+          <div class="project-tags"><span>Python</span><span>Network Security</span><span>Packet Analysis</span></div>
+          <a href="https://github.com/CyberHayde/PRODIGY_CS_05" target="_blank" rel="noopener" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img class="project-thumb" src="assets/proj-image-encryption.jpg" alt="Encrypted data and a padlock representing the image encryption project" loading="lazy">
+          <div class="project-card-body">
+          <h3>Image Encryption System</h3>
+          <p>An image encryption technique built on pixel manipulation — a practical demonstration of encryption concepts applied to visual data.</p>
+          <div class="project-tags"><span>Python</span><span>Image Processing</span><span>Encryption</span></div>
+          <a href="https://github.com/CyberHayde/PRODIGY_CS_02" target="_blank" rel="noopener" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img class="project-thumb" src="assets/proj-password-checker.png" alt="Password strength indicator icon" loading="lazy">
+          <div class="project-card-body">
+          <h3>Password Complexity Checker</h3>
+          <p>A Python tool that evaluates password strength and enforces security best practices, helping users build stronger password policies.</p>
+          <div class="project-tags"><span>Python</span><span>Security Tools</span><span>Password Security</span></div>
+          <a href="https://github.com/CyberHayde/PRODIGY_CS_04" target="_blank" rel="noopener" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img class="project-thumb logo-thumb" src="assets/fortinet-logo.png" alt="Fortinet logo" loading="lazy">
+          <div class="project-card-body">
+          <h3>FortiGate Security Configuration</h3>
+          <p>Hands-on FortiGate configuration covering VPN setup, network security policy, and intrusion prevention.</p>
+          <div class="project-tags"><span>Fortigate</span><span>VPN</span><span>IPS</span></div>
+          <a href="#" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img class="project-thumb" src="assets/proj-malware-lab.webp" alt="Magnifying glass over malware code" loading="lazy">
+          <div class="project-card-body">
+          <h3>Malware Analysis Lab</h3>
+          <p>A FLARE VM environment for malware analysis — dissecting PE malware in Ghidra, applying YARA rules for detection, and studying advanced threats like Stuxnet.</p>
+          <div class="project-tags"><span>Malware Analysis</span><span>YARA</span><span>Ghidra</span></div>
+          <a href="#" class="code-link"><img class="gh-icon" src="assets/github-icon.png" alt="">View code →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">writing &amp; content</div>
+        <h2>Notes from the log</h2>
+        <p>Breaking down security concepts for people who are just getting started.</p>
+      </div>
+      <div class="writing-list">
+        <div class="writing-item reveal">
+          <time>LinkedIn</time>
+          <div>
+            <div class="meta"><span class="cat">Cybersecurity Education</span></div>
+            <h3>Cybersecurity &amp; Botnets: What InfoSec Pros Need to Know</h3>
+            <p>A breakdown of how botnets operate and why they remain one of the more persistent threats in network security.</p>
+          </div>
+          <a href="https://www.linkedin.com/posts/ambrose-umoh-544738231_cybersecurity-botnets-infosec-activity-7306728350096498689-YvOC" target="_blank" rel="noopener" class="go">Read more →</a>
+        </div>
+        <div class="writing-item reveal">
+          <time>LinkedIn</time>
+          <div>
+            <div class="meta"><span class="cat">Cybersecurity Education</span></div>
+            <h3>Do You Know How Dangerous These 27 Lines of Code Are?</h3>
+            <p>A look at how a keylogger works under the hood, framed for defenders — understanding the mechanism so it's easier to detect and stop.</p>
+          </div>
+          <a href="https://www.linkedin.com/posts/ambrose-umoh-544738231_do-you-know-how-dangerous-these-27-lines-activity-7220176299208691712-a-Ug" target="_blank" rel="noopener" class="go">Read more →</a>
+        </div>
+        <div class="writing-item reveal">
+          <time>LinkedIn</time>
+          <div>
+            <div class="meta"><span class="cat">Cybersecurity Education</span></div>
+            <h3>Encrypting and Decrypting Images: The Art of Visual Security</h3>
+            <p>How pixel-level manipulation can be used to encrypt and protect images — a practical look at applying cryptography beyond plain text.</p>
+          </div>
+          <a href="https://www.linkedin.com/posts/ambrose-umoh-544738231_encrypting-and-decrypting-images-the-art-activity-7220057846560759809-Ofqn" target="_blank" rel="noopener" class="go">Read more →</a>
+        </div>
+        <div class="writing-item reveal">
+          <time>LinkedIn</time>
+          <div>
+            <div class="meta"><span class="cat">Network Security</span></div>
+            <h3>Sniffing Network Traffic: A Simple Packet Analyzer Walkthrough</h3>
+            <p>A Python packet sniffer build, paired with an explainer on how network packet analysis works and why it matters for security monitoring.</p>
+          </div>
+          <a href="https://www.linkedin.com/posts/ambrose-umoh-544738231_sniffing-network-traffic-a-simple-packet-activity-7220179258235584512-oyBf" target="_blank" rel="noopener" class="go">Read more →</a>
+        </div>
+      </div>
+      <div class="view-all reveal">
+        <a href="http://www.linkedin.com/in/ambrose-umoh-544738231" target="_blank" rel="noopener" class="btn btn-ghost">View all content →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <h2>Let's talk security, software, or Smaxel</h2>
+        <p>Open to SOC analyst opportunities, cybersecurity collaborations, and conversations about Cyberhayde and Smaxel.</p>
+        <div class="contact-ctas">
+          <a href="mailto:umohambrose970@gmail.com" class="btn btn-primary">Email me →</a>
+          <a href="tel:+2348127784713" class="btn btn-ghost">Call / WhatsApp</a>
+          <a href="https://linktr.ee/CyberHayde" target="_blank" rel="noopener" class="btn btn-ghost">All links (Linktree)</a>
+        </div>
+        <div class="contact-details">
+          <span>umohambrose970@gmail.com</span>
+          <span class="dash">—</span>
+          <span>+234 812 778 4713</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Umoh Ambrose Elijah — Cyberhayde. Built with intent, secured by habit.</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Rotating role line
+  const roles = ['SOC Analyst in Training', 'Global Youth Ambassador', 'Lagos State Youth Ambassador', 'Author of Echoes of Wisdom'];
+  const roleEl = document.getElementById('roleRotator');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (roleEl && !reduceMotion) {
+    let ri = 0;
+    setInterval(() => {
+      roleEl.classList.add('swap');
+      setTimeout(() => {
+        ri = (ri + 1) % roles.length;
+        roleEl.textContent = roles[ri];
+        roleEl.classList.remove('swap');
+      }, 350);
+    }, 2800);
+  }
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id], .hero');
+  const navLinks = document.querySelectorAll('nav.links a, .mobile-menu a');
+  const setActive = () => {
+    let currentId = '';
+    const scrollPos = window.scrollY + 120;
+    document.querySelectorAll('section[id]').forEach(sec => {
+      if (sec.offsetTop <= scrollPos) currentId = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+    });
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  // Back to top button
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 600);
+  }, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
