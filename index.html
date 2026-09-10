@@ -208,7 +208,6 @@
 
   /* -------------------- SECTION SCAFFOLD -------------------- */
   section{padding:100px 0;}
-  section + section{border-top:1px solid var(--line);}
   .sec-head{margin-bottom:48px; max-width:64ch;}
   .sec-head .eyebrow{margin-bottom:14px;}
   .sec-head h2{
@@ -216,6 +215,20 @@
     margin-bottom:14px; letter-spacing:-0.01em;
   }
   .sec-head p{color:var(--muted); font-size:1rem;}
+
+  /* signal divider — same status-dot language as the nav, marking each seam */
+  .sec-divider{position:relative; height:1px; background:var(--line);}
+  .sec-divider .ping{
+    position:absolute; left:50%; top:50%; width:6px; height:6px; border-radius:50%;
+    background:var(--cyan); transform:translate(-50%,-50%);
+    box-shadow:0 0 0 0 rgba(82,209,200,0.35);
+    animation:radarping 3.2s ease-out infinite;
+  }
+  @keyframes radarping{
+    0%{box-shadow:0 0 0 0 rgba(82,209,200,0.35);}
+    70%{box-shadow:0 0 0 14px rgba(82,209,200,0);}
+    100%{box-shadow:0 0 0 0 rgba(82,209,200,0);}
+  }
 
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
@@ -501,6 +514,8 @@
     </div>
   </section>
 
+  <div class="sec-divider"><span class="ping"></span></div>
+
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap">
@@ -536,6 +551,8 @@
       </div>
     </div>
   </section>
+
+  <div class="sec-divider"><span class="ping"></span></div>
 
   <!-- SKILLS -->
   <section id="skills">
@@ -586,6 +603,8 @@
     </div>
   </section>
 
+  <div class="sec-divider"><span class="ping"></span></div>
+
   <!-- CERTS / HONORS -->
   <section id="credentials">
     <div class="wrap">
@@ -623,6 +642,8 @@
     </div>
   </section>
 
+  <div class="sec-divider"><span class="ping"></span></div>
+
   <!-- COMMUNITY IMPACT -->
   <section id="community">
     <div class="wrap">
@@ -653,6 +674,8 @@
       </div>
     </div>
   </section>
+
+  <div class="sec-divider"><span class="ping"></span></div>
 
   <!-- VENTURES (NEW) -->
   <section id="ventures">
@@ -746,6 +769,8 @@
     </div>
   </section>
 
+  <div class="sec-divider"><span class="ping"></span></div>
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="wrap">
@@ -813,6 +838,8 @@
     </div>
   </section>
 
+  <div class="sec-divider"><span class="ping"></span></div>
+
   <!-- WRITING -->
   <section id="writing">
     <div class="wrap">
@@ -864,6 +891,8 @@
       </div>
     </div>
   </section>
+
+  <div class="sec-divider"><span class="ping"></span></div>
 
   <!-- CONTACT -->
   <section id="contact">
