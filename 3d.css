@@ -1,0 +1,34 @@
+/* 3D layer: sits on top of style.css */
+html{background:var(--bg);}
+body{background:transparent; animation:none;}
+#gl{position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
+body::before{content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 40%, transparent 35%, rgba(12,18,32,.75) 100%);}
+header.site-nav, main, footer, .to-top{position:relative; z-index:1;}
+header.site-nav{position:fixed; z-index:100;}
+.to-top{position:fixed; z-index:90;}
+
+/* readable panels over the moving scene */
+.about-grid > .reveal:first-child, .sec-head{
+  background:rgba(12,18,32,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  border-radius:var(--radius); padding:18px 22px; margin-left:-22px; margin-right:-22px;
+}
+.sec-head{margin-bottom:28px;}
+
+/* tilt cards */
+.tilt{transform-style:preserve-3d; will-change:transform;
+  transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .25s ease, box-shadow .25s ease;
+  background-image:radial-gradient(260px circle at var(--gx,50%) var(--gy,50%), rgba(82,209,200,.10), transparent 60%);}
+.tilt:hover{box-shadow:0 24px 50px -24px rgba(0,0,0,.7), 0 0 0 1px rgba(82,209,200,.25);}
+.tilt.reveal.in{transition:transform .25s ease, box-shadow .25s ease, opacity .6s ease;}
+
+/* book cover leans in 3D */
+.book-card img{transform:perspective(500px) rotateY(-22deg); transition:transform .5s ease;
+  box-shadow:-6px 6px 16px rgba(0,0,0,.5); transform-origin:left center;}
+.book-card:hover img{transform:perspective(500px) rotateY(-4deg) scale(1.04);}
+
+@media (max-width:700px){
+  .sec-head, .about-grid > .reveal:first-child{margin-left:0; margin-right:0;}
+}
+@media (prefers-reduced-motion:reduce){ .tilt{transform:none;} }
