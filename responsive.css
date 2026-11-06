@@ -1,0 +1,65 @@
+/* Responsive and readability pass. Loads last. */
+html{-webkit-text-size-adjust:100%; scroll-padding-top:84px;}
+body{overflow-x:clip;}
+.skip{position:fixed; left:12px; top:-70px; z-index:300; background:var(--cyan); color:#06121a; padding:10px 16px; border-radius:8px; font:600 14px var(--body); transition:top .2s;}
+.skip:focus{top:12px;}
+:focus-visible{outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px;}
+
+/* text never escapes its box, headings balance, paragraphs avoid orphans */
+h1,h2,h3,h4,p,li,a,.v,.k,.row span{overflow-wrap:break-word;}
+h1,h2,h3{text-wrap:balance;} p,li{text-wrap:pretty;}
+img,video{max-width:100%;}
+.hero > *, .about-grid > *, .skill-cols > *, .cred-grid > *, .community-grid > *, .venture-card > *, .project-grid > *, .writing-item > *, .fact, .row{min-width:0;}
+.wrap{padding-left:max(clamp(18px,4vw,28px), env(safe-area-inset-left)); padding-right:max(clamp(18px,4vw,28px), env(safe-area-inset-right));}
+
+/* navigation: never overflows, collapses by itself when links do not fit */
+.brand{flex:none; white-space:nowrap;}
+nav.links{flex-wrap:nowrap;} nav.links a{white-space:nowrap;}
+.site-nav.compact nav.links{display:none;}
+.site-nav.compact .nav-toggle{display:flex;}
+.mobile-menu{max-height:calc(100vh - 72px); max-height:calc(100dvh - 72px); overflow-y:auto; padding-bottom:max(12px, env(safe-area-inset-bottom));}
+
+/* buttons and tap targets */
+.btn{display:inline-flex; align-items:center; justify-content:center; text-align:center;}
+@media (pointer:coarse){ .btn, .mobile-menu a, .nav-toggle{min-height:46px;} .to-top{width:46px; height:46px;} }
+
+/* hero */
+.console-wrap{width:100%; max-width:560px; justify-self:center;}
+.console-body{overflow-wrap:anywhere; font-size:clamp(11.5px, 3vw, 13px);}
+.hero-copy .name{overflow-wrap:break-word;}
+
+/* new content blocks */
+.prose{max-width:68ch; margin-bottom:28px;} .prose p{color:var(--muted); margin-bottom:1em; font-size:1.02rem;}
+.contact-ctas{display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
+.contact-details{display:flex; flex-wrap:wrap; justify-content:center; gap:4px 12px;}
+.contact-details span{overflow-wrap:anywhere;}
+
+/* tablets */
+@media (min-width:721px) and (max-width:980px){
+  .venture-card{padding:30px;} .community-grid{grid-template-columns:1fr 1fr;} .cred-grid{grid-template-columns:1fr 1fr;}
+  .writing-item{grid-template-columns:96px 1fr auto; gap:18px;}
+}
+/* phones */
+@media (max-width:720px){
+  section{padding:56px 0;}
+  .community-grid, .cred-grid{grid-template-columns:1fr;}
+  .community-body p, .project-card-body p, .writing-item p, .venture-card p, .skill-panel li, .fact .v{font-size:14.5px; line-height:1.65;}
+  .project-tags span, .venture-badges span, .impact-tag{font-size:12px;}
+  .sec-head{margin-bottom:24px;} .sec-head h2{font-size:clamp(1.5rem, 7vw, 1.9rem);}
+  .hero-ctas .btn{flex:1 1 150px;}
+  .contact-ctas .btn{flex:1 1 100%;}
+  .venture-card{padding:24px 20px; gap:22px;}
+  .venture-panel .row{gap:12px;}
+  .about-grid{gap:28px;} .fact-card{padding:20px;}
+  .book-card{flex-direction:row; gap:14px;}
+  footer p{padding:0 20px; text-align:center;}
+}
+@media (max-width:360px){ .hero-ctas .btn{flex:1 1 100%;} .name{font-size:2.05rem !important;} }
+/* landscape phones */
+@media (max-height:520px) and (orientation:landscape){ .hero{padding-top:84px; min-height:0;} section{padding:44px 0;} }
+/* big screens */
+@media (min-width:1600px){ :root{--maxw:1280px;} body{font-size:17px;} }
+
+/* tighter heading rhythm inside cards */
+h1,h2{line-height:1.15;} h3{line-height:1.3;}
+.venture-card h3,.community-body h3,.project-card-body h3,.writing-item h3,.skill-panel h3{line-height:1.3;}

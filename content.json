@@ -1,0 +1,531 @@
+{
+  "layout": [
+    {
+      "id": "hero",
+      "label": "Home",
+      "show": true,
+      "menu": false
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "credentials",
+      "label": "Credentials",
+      "show": true,
+      "menu": false
+    },
+    {
+      "id": "community",
+      "label": "Community",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "ventures",
+      "label": "Ventures",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "writing",
+      "label": "Writing",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "link-cyberhayde",
+      "type": "link",
+      "label": "CyberHayde ↗",
+      "link": "https://cyberhayde.github.io/CyberHayde/",
+      "show": true,
+      "menu": true
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "show": true,
+      "menu": true
+    }
+  ],
+  "hero": {
+    "eyebrow": "status: monitoring",
+    "name": "Umoh Ambrose Elijah",
+    "roles": [
+      "SOC Analyst in Training",
+      "Global Youth Ambassador",
+      "Lagos State Youth Ambassador",
+      "Author of Echoes of Wisdom"
+    ],
+    "intro": "I study attacker behavior so I can build better defenses — currently securing documents by day at AIICO Insurance, training for the SOC by night, and building tools under my own brand, Cyberhayde.",
+    "buttons": [
+      {
+        "label": "See Cyberhayde & Smaxel →",
+        "link": "#ventures",
+        "style": "primary"
+      },
+      {
+        "label": "Get in touch",
+        "link": "#contact",
+        "style": "ghost"
+      }
+    ],
+    "console": [
+      {
+        "command": "whoami",
+        "output": "umoh_ambrose_elijah"
+      },
+      {
+        "command": "role",
+        "output": "EDMS Officer, AIICO Insurance PLC"
+      },
+      {
+        "command": "based_in",
+        "output": "Lagos, Nigeria"
+      },
+      {
+        "command": "studying",
+        "output": "B.Sc Computer Science — NOUN"
+      },
+      {
+        "command": "objective",
+        "output": "grow into a SOC Analyst"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "about",
+    "heading": "Defense-minded, by training and by trade",
+    "paragraphs": [
+      "I'm a cybersecurity professional in training and Computer Science student at the **National Open University of Nigeria (NOUN)**, with a strong focus on security operations, threat detection, and defensive cybersecurity.",
+      "My path into cybersecurity is driven by analytical curiosity, problem-solving, and a passion for protecting digital environments through proactive monitoring, incident analysis, and network defense strategies. I've built hands-on experience through certifications, cybersecurity simulations, and practical labs covering threat analysis, network security, and defensive technologies.",
+      "Currently I serve as an **EDMS Officer at AIICO Insurance PLC**, where I support secure document management, access control, and information governance — work that reinforces my understanding of operational security and data protection in real-world environments.",
+      "Beyond the technical side, I'm the author of **Echoes of Wisdom**, a Global Peace Ambassador, and an advocate for using technology as a tool for empowerment, youth inspiration, and positive global impact.",
+      "My long-term goal is to grow into a highly skilled SOC Analyst, contributing to threat detection, incident response, and cyber defense at a global scale."
+    ],
+    "facts": [
+      {
+        "label": "Role",
+        "value": "EDMS Officer, AIICO Insurance PLC"
+      },
+      {
+        "label": "Education",
+        "value": "B.Sc Computer Science, NOUN"
+      },
+      {
+        "label": "Focus",
+        "value": "SOC / Threat Detection / Defense"
+      },
+      {
+        "label": "Also building",
+        "value": "Cyberhayde & Smaxel"
+      },
+      {
+        "label": "Recognition",
+        "value": "Global Peace Ambassador"
+      }
+    ],
+    "book": {
+      "image": "assets/echoes-of-wisdom-cover.jpg",
+      "alt": "Echoes of Wisdom book cover by Umoh Ambrose",
+      "kicker": "Author",
+      "title": "Echoes of Wisdom",
+      "text": "A practical guide to living with clarity — get it on Selar →",
+      "link": "https://selar.com/11111929if"
+    }
+  },
+  "skills": {
+    "eyebrow": "skills & expertise",
+    "heading": "A comprehensive skill set across security, systems, and people",
+    "intro": "Combining cybersecurity fundamentals, technical depth, and continuous, self-directed learning.",
+    "panels": [
+      {
+        "tag": "Core Cybersecurity",
+        "title": "Security Operations",
+        "items": [
+          "Security Operations (SOC fundamentals)",
+          "Threat Detection & Analysis",
+          "Incident Investigation",
+          "Network Security & Monitoring",
+          "Vulnerability Awareness",
+          "Security Risk Management"
+        ]
+      },
+      {
+        "tag": "Technical",
+        "title": "Tools & Systems",
+        "items": [
+          "Networking Fundamentals (CCNA-level)",
+          "Linux & Command Line",
+          "SIEM Concepts (Splunk / Log Analysis)",
+          "Microsoft Defender Security Concepts",
+          "Firewall Fundamentals (Fortinet)",
+          "Endpoint Security"
+        ]
+      },
+      {
+        "tag": "Professional",
+        "title": "How I Work",
+        "items": [
+          "Analytical Thinking",
+          "Technical Troubleshooting",
+          "Teaching & Knowledge Sharing",
+          "Communication",
+          "Problem Solving",
+          "Leadership & Mentorship"
+        ]
+      }
+    ]
+  },
+  "credentials": {
+    "eyebrow": "credentials",
+    "heading": "Certifications & recognition",
+    "logos": [
+      {
+        "image": "assets/fortinet-logo.png",
+        "alt": "Fortinet"
+      },
+      {
+        "image": "assets/cisco-logo.png",
+        "alt": "Cisco"
+      },
+      {
+        "image": "assets/ndpc-logo.png",
+        "alt": "Nigeria Data Protection Commission"
+      }
+    ],
+    "groups": [
+      {
+        "title": "Certifications",
+        "icon": "▣",
+        "badge": "✓",
+        "items": [
+          "Google Cybersecurity Professional Certificate",
+          "Fortinet Certified Associate in Cybersecurity",
+          "Fortinet FortiGate 7.4 Operator",
+          "Certified Network Security Practitioner (CNSP)",
+          "Cisco Cyber Threat Management Certification",
+          "CCNA 200-301 Training",
+          "Nigeria Data Protection Commission — Responsible Data Management",
+          "Commonwealth Bank Cybersecurity Job Simulation",
+          "Mastercard Cybersecurity Job Simulation"
+        ]
+      },
+      {
+        "title": "Honors & Accomplishments",
+        "icon": "★",
+        "badge": "★",
+        "items": [
+          "Directorate of Strategic Partnership — Lagos State Youth Ambassadors",
+          "Author of Echoes of Wisdom",
+          "Global Peace Ambassador",
+          "IBILE Youth Academy Alumni",
+          "Active contributor to cybersecurity awareness & education"
+        ]
+      }
+    ]
+  },
+  "community": {
+    "eyebrow": "giving back",
+    "heading": "Community impact & volunteer work",
+    "intro": "I'm passionate about giving back to the community and creating meaningful change, particularly for young people and underserved communities — through hands-on initiatives that make tangible, on-the-ground contributions.",
+    "cards": [
+      {
+        "image": "assets/community-notebooks.jpg",
+        "alt": "Distributing stationery to children in an underserved community",
+        "kicker": "Educational Support for Children",
+        "title": "Sharing Stationery to Children in Underserved Communities",
+        "text": "Partnered with a local youth initiative to distribute school supplies to children living in underserved areas — reducing barriers to education and supporting students who lacked access to basic learning materials.",
+        "impact": "Over 100 children reached"
+      },
+      {
+        "image": "assets/community-sanitation-2.jpg",
+        "alt": "Volunteers taking part in a street clean-up and sanitation drive",
+        "kicker": "Community Sanitation Exercise",
+        "title": "Street Clean-Up & Sanitation Drive",
+        "text": "Organized and took part in a sanitation exercise to clean public streets and promote hygiene awareness — improving local living conditions and engaging residents in sustainable sanitation practices.",
+        "impact": "Cleaner, safer community space"
+      }
+    ]
+  },
+  "ventures": {
+    "eyebrow": "building",
+    "heading": "Ventures — Cyberhayde",
+    "intro": "Outside my day-to-day work, I run Cyberhayde: an independent software brand helping individuals and small businesses digitize and automate the manual processes slowing them down.",
+    "cards": [
+      {
+        "kicker": "Flagship product",
+        "title": "Smaxel — Excel Automation Toolkit",
+        "text": "A 49-tool Windows desktop toolkit built for anyone who lives inside spreadsheets — admin staff, data officers, finance teams, auditors, and small business owners. It handles the cleaning, matching, reformatting, and hunting-through-files work in seconds instead of hours.",
+        "badges": [
+          "49 tools",
+          "Python / Tkinter",
+          "Offline HMAC-SHA256 licensing",
+          "CLI support"
+        ],
+        "buttonLabel": "Get Smaxel on Selar →",
+        "buttonLink": "https://selar.com/smaxel",
+        "details": [
+          {
+            "label": "build",
+            "value": "modular, 4-file architecture"
+          },
+          {
+            "label": "licensing",
+            "value": "device-locked, offline"
+          },
+          {
+            "label": "handles",
+            "value": "large files, multithreaded"
+          },
+          {
+            "label": "extras",
+            "value": "auto-backup, dark mode"
+          },
+          {
+            "label": "status",
+            "value": "live on Selar"
+          }
+        ]
+      },
+      {
+        "kicker": "Release",
+        "title": "Church Online Archive",
+        "text": "A free, cloud-synced records app built for a growing congregation still tracking members, attendance, and visitors on paper and in scattered notebooks. The whole admin team runs it from their phones, members records, attendance trends, visitor and outreach tracking, all in one place.",
+        "badges": [
+          "Cloud-synced",
+          "Records & attendance",
+          "Free to use"
+        ],
+        "buttonLabel": "Try the live demo →",
+        "buttonLink": "https://cyberhayde.github.io/Database-Demo/",
+        "details": [
+          {
+            "label": "build",
+            "value": "cloud-synced web app"
+          },
+          {
+            "label": "tracks",
+            "value": "members, attendance, visitors"
+          },
+          {
+            "label": "access",
+            "value": "phone-friendly, whole admin team"
+          },
+          {
+            "label": "status",
+            "value": "live demo"
+          }
+        ]
+      },
+      {
+        "kicker": "Latest release",
+        "title": "Inventory Tracker",
+        "text": "An offline-first inventory app built for shops running stock counts from memory or a notebook. Tracks stock and sales straight from the shop counter, and keeps working even without steady internet.",
+        "badges": [
+          "Offline-first",
+          "Stock & sales tracking",
+          "Nigeria-focused"
+        ],
+        "buttonLabel": "Try the live demo →",
+        "buttonLink": "https://cyberhayde.github.io/Inventory-demo/",
+        "details": [
+          {
+            "label": "build",
+            "value": "offline-first PWA"
+          },
+          {
+            "label": "tracks",
+            "value": "stock, sales, reorder levels"
+          },
+          {
+            "label": "works",
+            "value": "without steady internet"
+          },
+          {
+            "label": "status",
+            "value": "live demo"
+          }
+        ]
+      },
+      {
+        "kicker": "The brand",
+        "title": "Cyberhayde",
+        "text": "Cyberhayde is the organization behind Smaxel and future releases — built around one idea: manual, repetitive processes (not just paper ones) are a solvable problem. Every product ships with the same security-first instinct I bring to my SOC training: lock it down, document it well, and make it easy for a non-technical person to trust.",
+        "badges": [
+          "Independent software brand",
+          "Digitization & automation",
+          "Security-minded engineering"
+        ],
+        "buttonLabel": "",
+        "buttonLink": "",
+        "details": [
+          {
+            "label": "mission",
+            "value": "digitize & automate"
+          },
+          {
+            "label": "audience",
+            "value": "individuals & small business"
+          },
+          {
+            "label": "flagship",
+            "value": "Smaxel"
+          },
+          {
+            "label": "next",
+            "value": "more Cyberhayde releases"
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "projects",
+    "heading": "Hands-on security & systems work",
+    "intro": "A comprehensive set of practical builds spanning cryptography, network analysis, and applied security concepts.",
+    "cards": [
+      {
+        "image": "assets/proj-caesar-cipher.jpg",
+        "alt": "Code editor representing the Caesar cipher project",
+        "logoStyle": "",
+        "title": "Caesar Cipher Encryption Tool",
+        "text": "A Python-based encryption and decryption tool built on the Caesar cipher algorithm, with an educational video walking through how it works.",
+        "tags": [
+          "Python",
+          "Cryptography"
+        ],
+        "codeLink": "https://github.com/CyberHayde/PRODIGY_CS_01"
+      },
+      {
+        "image": "assets/proj-packet-sniffer.png",
+        "alt": "CommView packet capture tool showing live network traffic",
+        "logoStyle": "",
+        "title": "Python Packet Sniffer",
+        "text": "A network packet analyzer that captures and inspects traffic in real time, paired with educational content on network security monitoring.",
+        "tags": [
+          "Python",
+          "Network Security",
+          "Packet Analysis"
+        ],
+        "codeLink": "https://github.com/CyberHayde/PRODIGY_CS_05"
+      },
+      {
+        "image": "assets/proj-image-encryption.jpg",
+        "alt": "Encrypted data and a padlock representing the image encryption project",
+        "logoStyle": "",
+        "title": "Image Encryption System",
+        "text": "An image encryption technique built on pixel manipulation — a practical demonstration of encryption concepts applied to visual data.",
+        "tags": [
+          "Python",
+          "Image Processing",
+          "Encryption"
+        ],
+        "codeLink": "https://github.com/CyberHayde/PRODIGY_CS_02"
+      },
+      {
+        "image": "assets/proj-password-checker.png",
+        "alt": "Password strength indicator icon",
+        "logoStyle": "",
+        "title": "Password Complexity Checker",
+        "text": "A Python tool that evaluates password strength and enforces security best practices, helping users build stronger password policies.",
+        "tags": [
+          "Python",
+          "Security Tools",
+          "Password Security"
+        ],
+        "codeLink": "https://github.com/CyberHayde/PRODIGY_CS_04"
+      },
+      {
+        "image": "assets/fortinet-logo.png",
+        "alt": "Fortinet logo",
+        "logoStyle": "yes",
+        "title": "FortiGate Security Configuration",
+        "text": "Hands-on FortiGate configuration covering VPN setup, network security policy, and intrusion prevention.",
+        "tags": [
+          "Fortigate",
+          "VPN",
+          "IPS"
+        ],
+        "codeLink": ""
+      },
+      {
+        "image": "assets/proj-malware-lab.webp",
+        "alt": "Magnifying glass over malware code",
+        "logoStyle": "",
+        "title": "Malware Analysis Lab",
+        "text": "A FLARE VM environment for malware analysis — dissecting PE malware in Ghidra, applying YARA rules for detection, and studying advanced threats like Stuxnet.",
+        "tags": [
+          "Malware Analysis",
+          "YARA",
+          "Ghidra"
+        ],
+        "codeLink": ""
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "writing & content",
+    "heading": "Notes from the log",
+    "intro": "Breaking down security concepts for people who are just getting started.",
+    "items": [
+      {
+        "source": "LinkedIn",
+        "category": "Cybersecurity Education",
+        "title": "Cybersecurity & Botnets: What InfoSec Pros Need to Know",
+        "text": "A breakdown of how botnets operate and why they remain one of the more persistent threats in network security.",
+        "link": "https://www.linkedin.com/posts/ambrose-umoh-544738231_cybersecurity-botnets-infosec-activity-7306728350096498689-YvOC"
+      },
+      {
+        "source": "LinkedIn",
+        "category": "Cybersecurity Education",
+        "title": "Do You Know How Dangerous These 27 Lines of Code Are?",
+        "text": "A look at how a keylogger works under the hood, framed for defenders — understanding the mechanism so it's easier to detect and stop.",
+        "link": "https://www.linkedin.com/posts/ambrose-umoh-544738231_do-you-know-how-dangerous-these-27-lines-activity-7220176299208691712-a-Ug"
+      },
+      {
+        "source": "LinkedIn",
+        "category": "Cybersecurity Education",
+        "title": "Encrypting and Decrypting Images: The Art of Visual Security",
+        "text": "How pixel-level manipulation can be used to encrypt and protect images — a practical look at applying cryptography beyond plain text.",
+        "link": "https://www.linkedin.com/posts/ambrose-umoh-544738231_encrypting-and-decrypting-images-the-art-activity-7220057846560759809-Ofqn"
+      },
+      {
+        "source": "LinkedIn",
+        "category": "Network Security",
+        "title": "Sniffing Network Traffic: A Simple Packet Analyzer Walkthrough",
+        "text": "A Python packet sniffer build, paired with an explainer on how network packet analysis works and why it matters for security monitoring.",
+        "link": "https://www.linkedin.com/posts/ambrose-umoh-544738231_sniffing-network-traffic-a-simple-packet-activity-7220179258235584512-oyBf"
+      }
+    ],
+    "viewAllLink": "http://www.linkedin.com/in/ambrose-umoh-544738231",
+    "viewAllLabel": "View all content →"
+  },
+  "contact": {
+    "heading": "Let's talk security, software, or Smaxel",
+    "text": "Open to SOC analyst opportunities, cybersecurity collaborations, and conversations about Cyberhayde and Smaxel.",
+    "email": "umohambrose970@gmail.com",
+    "phone": "+234 812 778 4713",
+    "phoneLink": "+2348127784713",
+    "linktree": "https://linktr.ee/CyberHayde"
+  },
+  "custom": [],
+  "footer": {
+    "text": "Umoh Ambrose Elijah — Cyberhayde. Built with intent, secured by habit."
+  }
+}
